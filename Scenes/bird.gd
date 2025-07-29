@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 class_name Bird
 
+signal game_started
+
 @export var gravity = 1000.0
 @export var jump_force = -350
 @export var rotation_speed = 2
@@ -32,6 +34,7 @@ func rotate_bird():
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("Jump") && should_process_input:
 		if !is_started:
+			game_started.emit()
 			is_started = true
 			animation_player.play("flap_wings")
 		jump()

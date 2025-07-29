@@ -43,6 +43,9 @@ func spawn_pipe():
 	pipe.set_speed(pipe_speed)
 
 
+func start_spawning_pipes():
+	spawn_timer.start()
+
+
 func _ready() -> void:
 	spawn_timer.timeout.connect(spawn_pipe)
-	spawn_timer.start()
