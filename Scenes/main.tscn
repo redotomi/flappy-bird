@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dbfu6ayw18ehh"]
+[gd_scene load_steps=7 format=3 uid="uid://dbfu6ayw18ehh"]
 
 [ext_resource type="Texture2D" uid="uid://bwf5i0qyei8n0" path="res://Assets/background-day.png" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://jcsqkfod4cxc" path="res://Scenes/bird.tscn" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://dwksb1ueqbodu" path="res://Scenes/game_manager.gd" id="1_kry3j"]
 [ext_resource type="PackedScene" uid="uid://csp36yykj5wsv" path="res://Scenes/ground.tscn" id="3_8gbba"]
 [ext_resource type="PackedScene" uid="uid://ca84fw5ko47ol" path="res://Scenes/pipe_spawner.tscn" id="4_jjvhh"]
+[ext_resource type="PackedScene" uid="uid://bxwuosfqiwomi" path="res://Scenes/fade.tscn" id="6_21xkr"]
 
 [node name="main" type="Node"]
 
@@ -12,9 +13,8 @@
 script = ExtResource("1_kry3j")
 
 [node name="Background" type="Sprite2D" parent="."]
+position = Vector2(0, 1)
 texture = ExtResource("1_bo1nx")
-
-[node name="Bird" parent="." instance=ExtResource("1_jjgbg")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -22,3 +22,7 @@ texture = ExtResource("1_bo1nx")
 position = Vector2(24, 200)
 
 [node name="PipeSpawner" parent="." instance=ExtResource("4_jjvhh")]
+
+[node name="Bird" parent="." instance=ExtResource("1_jjgbg")]
+
+[node name="Fade" parent="." instance=ExtResource("6_21xkr")]

@@ -50,6 +50,10 @@ func _physics_process(delta: float) -> void:
 	rotate_bird()
 
 
+func kill():
+	should_process_input = false
+
+
 func stop():
 	animation_player.stop()
 	gravity = 0
